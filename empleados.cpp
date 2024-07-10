@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
 string meses[12] = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
