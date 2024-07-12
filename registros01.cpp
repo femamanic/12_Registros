@@ -42,6 +42,8 @@ int main () {
     cout << "Sueldo: " << empleados[posmin].sueldo << "\n";
     system ("pause>nul");
     system ("cls");
+    cout << "\t   DataTech\n";
+    cout << "==============================\n";
     for (int i = 0; i < n; i++) {
         cout << "Empleado " << i+1 << "\n";
         cout << "Nombre: " << empleados[i].nombre << "\n";
