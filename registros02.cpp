@@ -29,9 +29,29 @@ int main () {
             }
         } while (personas[i].edad < 0);
     }
+    int mayor = 0; float promayor = 0;
+    for (int i = 0; i < n; i++) {
+        if (personas[i].edad > 50) {
+            mayor++;
+            promayor += personas[i].edad;
+        }
+    }
+    system ("cls");
+    cout << "Personas con una edad mayor a 50: " << mayor << "\n";
+    cout << "==============================\n";
+    for (int i = 0; i < n; i++) {
+        if (personas[i].edad > 50) {
+            cout << "Nombres: " << personas[i].nombres << "\n";
+            cout << "DNI: " << personas[i].DNI << "\n";
+            cout << "Edad: " << personas[i].edad << "\n";
+            if (i < n-1) cout << "------------------------------\n";
+            else cout << "==============================\n";
+        }
+    }
+    cout << "Promedio de edad de personas con edad mayor a 50: " << promayor/mayor << "\n";
+    system ("pause>nul");
     system ("cls");
     for (int i = 0; i < n; i++) {
-        cout << "Persona " << i+1 << "\n";
         cout << "Nombres: " << personas[i].nombres << "\n";
         cout << "DNI: " << personas[i].DNI << "\n";
         cout << "Edad: " << personas[i].edad << "\n";
