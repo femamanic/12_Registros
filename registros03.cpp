@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+string meses[12] = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
+
 struct fecha {
     string nombres;
     int dia;
@@ -9,7 +11,7 @@ struct fecha {
 } fecha[50];
 
 int main () {
-    int n;
+    int n, m;
     bool error = false;
     system ("cls");
     cout << "Numero de personas: "; cin >> n;
@@ -48,6 +50,25 @@ int main () {
             }
         } while (error == true);
     }
+    do {
+        system ("cls");
+        cout << "Buscar las personas nacidas en el mes: "; cin >> m;
+        if (m < 1 || m > 12) {
+            cout << "\t[Error: mes invalido]\n";
+            system ("pause>nul");
+        }
+    } while (m < 1 || m > 12);
+    system ("cls");
+    cout << "Personas nacidas en el mes de " << meses[m-1] << "\n";
+    cout << "=======================================\n";
+    for (int i = 0; i < n; i++) {
+        if (fecha[i].mes == m) {
+            cout << "Nombres: " << fecha[i].nombres << "\n";
+            cout << "Fecha de nacimiento: " << fecha[i].dia << "/" << fecha[i].mes << "/" << fecha[i].ano << "\n";
+            cout << "---------------------------------------\n";
+        }
+    }
+    system ("pause>nul");
     system ("cls");
     cout << "Personas registradas\n";
     cout << "==============================\n";
