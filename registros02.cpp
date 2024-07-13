@@ -16,7 +16,12 @@ int main () {
         cout << "Persona " << i+1 << ":\n";
         cin.ignore();
         cout << "Nombres: "; getline(cin, personas[i].nombres);
-        cout << "DNI: "; cin >> personas[i].DNI;
+        do {
+            cout << "DNI: "; cin >> personas[i].DNI;
+            if (personas[i].DNI < 10000000 or personas[i].DNI > 99999999) {
+                cout << "\t[Error DNI invalido]\n";
+            }
+        } while (personas[i].DNI < 10000000 or personas[i].DNI > 99999999);
         cout << "Edad: "; cin >> personas[i].edad;
     }
     system ("cls");
