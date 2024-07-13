@@ -52,31 +52,30 @@ int main () {
     }
     do {
         system ("cls");
-        cout << "Buscar las personas nacidas en el mes: "; cin >> m;
-        if (m < 1 || m > 12) {
-            cout << "\t[Error: mes invalido]\n";
-            system ("pause>nul");
+        cout << "Buscar las personas nacidas en el mes (0 = salir): "; cin >> m;
+        switch (m) {
+            case 0:
+                system ("cls");
+                cout << "Saliendo del programa...\n";
+                break;
+            default:
+                if (m < 1 || m > 12) {
+                    cout << "\t[Error: mes invalido]\n";
+                } else {
+                    system ("cls");
+                    cout << "Personas nacidas en el mes de " << meses[m-1] << "\n";
+                    cout << "=======================================\n";
+                    for (int i = 0; i < n; i++) {
+                        if (fecha[i].mes == m) {
+                            cout << "Nombres: " << fecha[i].nombres << "\n";
+                            cout << "Fecha de nacimiento: " << fecha[i].dia << "/" << fecha[i].mes << "/" << fecha[i].ano << "\n";
+                            cout << "---------------------------------------\n";
+                        }
+                    }
+                }
+                break;
         }
-    } while (m < 1 || m > 12);
-    system ("cls");
-    cout << "Personas nacidas en el mes de " << meses[m-1] << "\n";
-    cout << "=======================================\n";
-    for (int i = 0; i < n; i++) {
-        if (fecha[i].mes == m) {
-            cout << "Nombres: " << fecha[i].nombres << "\n";
-            cout << "Fecha de nacimiento: " << fecha[i].dia << "/" << fecha[i].mes << "/" << fecha[i].ano << "\n";
-            cout << "---------------------------------------\n";
-        }
-    }
-    system ("pause>nul");
-    system ("cls");
-    cout << "Personas registradas\n";
-    cout << "==============================\n";
-    for (int i = 0; i < n; i++) {
-        cout << "Nombres: " << fecha[i].nombres << "\n";
-        cout << "Fecha de nacimiento: " << fecha[i].dia << "/" << fecha[i].mes << "/" << fecha[i].ano << "\n";
-        if (i < n-1) cout << "------------------------------\n";
-    }
-    system ("pause>nul");
+        system ("pause>nul");
+    } while (m != 0);
     return 0;
 }
