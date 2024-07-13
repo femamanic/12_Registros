@@ -19,10 +19,15 @@ int main () {
         do {
             cout << "DNI: "; cin >> personas[i].DNI;
             if (personas[i].DNI < 10000000 or personas[i].DNI > 99999999) {
-                cout << "\t[Error DNI invalido]\n";
+                cout << "\t[Error: DNI invalido]\n";
             }
         } while (personas[i].DNI < 10000000 or personas[i].DNI > 99999999);
-        cout << "Edad: "; cin >> personas[i].edad;
+        do {
+            cout << "Edad: "; cin >> personas[i].edad;
+            if (personas[i].edad < 0) {
+                cout << "\t[Error: edad invalida]\n";
+            }
+        } while (personas[i].edad < 0);
     }
     system ("cls");
     for (int i = 0; i < n; i++) {
