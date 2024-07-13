@@ -3,7 +3,7 @@ using namespace std;
 
 struct persona {
     string nombres;
-    int DNI;
+    string DNI;
     int edad;
 } personas[50];
 
@@ -18,10 +18,10 @@ int main () {
         cout << "Nombres: "; getline(cin, personas[i].nombres);
         do {
             cout << "DNI: "; cin >> personas[i].DNI;
-            if (personas[i].DNI < 10000000 or personas[i].DNI > 99999999) {
+            if (personas[i].DNI.length() != 8){
                 cout << "\t[Error: DNI invalido]\n";
             }
-        } while (personas[i].DNI < 10000000 or personas[i].DNI > 99999999);
+        } while (personas[i].DNI.length() != 8);
         do {
             cout << "Edad: "; cin >> personas[i].edad;
             if (personas[i].edad < 0) {
