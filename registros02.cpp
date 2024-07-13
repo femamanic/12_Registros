@@ -9,7 +9,7 @@ struct persona {
 
 int main () {
     system ("cls");
-    int n;
+    int n; float promEdad, sEdad;
     cout << "Numero de personas: "; cin >> n;
     for (int i = 0; i < n; i++) {
         system ("cls");
@@ -28,8 +28,9 @@ int main () {
                 cout << "\t[Error: edad invalida]\n";
             }
         } while (personas[i].edad < 0);
+        sEdad += personas[i].edad;
     }
-    int mayor = 0; float promayor = 0;
+    int mayor = 0; float promayor = 0 , Pmayor;
     for (int i = 0; i < n; i++) {
         if (personas[i].edad > 50) {
             mayor++;
@@ -48,9 +49,15 @@ int main () {
             else cout << "==============================\n";
         }
     }
-    cout << "Promedio de edad de personas con edad mayor a 50: " << promayor/mayor << "\n";
+    Pmayor = promayor/mayor;
+    cout << "Promedio de edad de personas con edad mayor a 50: " << Pmayor << "\n";
     system ("pause>nul");
     system ("cls");
+    cout << "     Personas registradas\n";
+    cout << "==============================\n";
+    promEdad = sEdad/n;
+    cout << "Promedio de edad: " << promEdad << "\n";
+    cout << "==============================\n";
     for (int i = 0; i < n; i++) {
         cout << "Nombres: " << personas[i].nombres << "\n";
         cout << "DNI: " << personas[i].DNI << "\n";
