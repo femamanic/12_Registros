@@ -56,14 +56,14 @@ int main () {
     cout << "     Personas registradas\n";
     cout << "==============================\n";
     promEdad = sEdad/n;
-    cout << "Promedio de edad: " << promEdad << "\n";
-    cout << "==============================\n";
     for (int i = 0; i < n; i++) {
         cout << "Nombres: " << persona[i].nombres << "\n";
         cout << "DNI: " << persona[i].DNI << "\n";
         cout << "Edad: " << persona[i].edad << "\n";
         if (i < n-1) cout << "------------------------------\n";
     }
+    cout << "==============================\n";
+    cout << "Promedio de edad: " << promEdad << "\n";
     system ("pause>nul");
     return 0;
 }
